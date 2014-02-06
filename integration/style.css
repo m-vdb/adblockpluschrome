@@ -1,0 +1,219 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+body {
+  background: #f9f9f9;
+}
+
+.pimpmy {
+  display: block;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #888888;
+}
+
+.pimpmy .header {
+  display: table;
+  width: 100%;
+  padding: 5px 10px;
+  background: #79c056;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.pimpmy .header h3 {
+  display: table-cell;
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.pimpmy .header .close {
+  display: table-cell;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  text-align: right;
+}
+
+
+.pimpmy .content {
+  padding: 20px;
+}
+
+.pimpmy .content h2 {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.pimpmy .content h2 a {
+  font-size: 25px;
+  font-weight: 300;
+  color: #0069a6;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none
+}
+
+.pimpmy .content h2 a:visited {
+  color: #0069a6;
+}
+
+.pimpmy .content h2 a:hover {
+ color: #44a1d7;
+}
+
+.pimpmy .content p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #8b8b8b;
+  margin: 0;
+  padding-left: 26px;
+  font-weight: 300;
+}
+
+.pimpmy .content p.company {
+  background: url(img/ico-company.png) no-repeat;
+}
+
+.pimpmy .content p.contract {
+  background: url(img/ico-contract.png) no-repeat;
+}
+
+.pimpmy .content p.location {
+  margin-bottom: 14px;
+  background: url(img/ico-location.png) no-repeat;
+}
+
+.pimpmy .actions {
+  padding: 0 20px 20px 20px;
+}
+
+.pimpmy .actions .btn {
+  display: inline-block;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none !important;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  margin-right: 15px;
+  padding: 10px 30px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 15px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: #79c056;
+  box-shadow: 0 3px 0 #69ad48;
+}
+
+.pimpmy .actions .btn:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0 2px 0 #69ad48;
+}
+
+.pimpmy .actions .recommend {
+  position: relative;
+  top: 2px;
+  color: #0069a6;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+
+.pimpmy .actions .recommend:visited {
+  color: #0069a6;
+}
+
+.pimpmy .actions .recommend:hover {
+  color: #44a1d7;
+}
+
+.popup {
+  display: block;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #888888;
+}
+
+.popup .header {
+  display: block
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #d2d4d5;
+}
+
+.popup .header .logo {
+  display: block;
+  width: 120px;
+  height: 50px;
+  margin: 0 auto;
+  background: url(img/logo-pma.png) no-repeat;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.popup .content {
+  padding: 20px;
+}
+
+.popup .content .btn {
+  display: block;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none !important;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 18px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: #79c056;
+  box-shadow: 0 3px 0 #69ad48;
+}
+
+.popup .content .btn:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0 2px 0 #69ad48;
+}
+
+.popup .content .link {
+  display: block;
+  color: #0069a6;
+  font-size: 18px;
+  margin: 5px 0 0 0;
+  padding-left: 26px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+
+.popup .content .link:visited {
+  color: #0069a6;
+}
+
+.popup .content .link:hover {
+  color: #44a1d7;
+}
+
+.popup .content .disable {
+  margin: 20px 0 0 0;
+  background: url(img/ico-disable.png) 0 4px no-repeat;
+}
+
+.popup .content .settings {
+  background: url(img/ico-settings.png) 0 4px no-repeat;
+}
