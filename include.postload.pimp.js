@@ -1,5 +1,7 @@
 /*************** Pimp My App **************/
 
+var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
+
 function init(){
     createUserIfNeeded();
 }
@@ -15,7 +17,6 @@ function setLSKey(key, value){
 function createUserIfNeeded(){
     if (getLSKey("userId")) return;
 
-    var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
     var request = new XMLHttpRequest();
     request.open('POST', CREATE_USER_URL, true);
 
@@ -36,6 +37,5 @@ function createUserIfNeeded(){
 
     request.send()
 }
-
 
 init();

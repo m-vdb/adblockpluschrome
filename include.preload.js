@@ -19,6 +19,12 @@ var SELECTOR_GROUP_SIZE = 20;
 
 var elemhideElt = null;
 
+var JOB_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/get_user_job/";
+var JOB_TEMPLATE = (
+    "<div><a href='{{job_url}}'>{{job_title}}</a><br/>"+
+        "<span>{{job_location}}</span><br/><span>{{job_description}}</span><span data-jobId='{{job_id}}'></span></div>"
+);
+
 // Sets the currently used CSS rules for elemhide filters
 function setElemhideCSSRules(selectors)
 {
@@ -57,7 +63,9 @@ function setElemhideCSSRules(selectors)
     /***** Pimp My App *****/
     function initApplication(){
       $(selectors.join(", ")).each(function(i, el){
-          replaceElement(el);
+          getJob(function(data){
+              replaceElement(el, data);
+          });
       });
     }
 
@@ -102,7 +110,9 @@ function checkCollapse(event)
         {
           var parent = target.parentNode;
           var repl = document.createElement("span");
-          replaceElement(repl);
+          getJob(function(data){
+              replaceElement(repl, data);
+          });
 
           // <frame> cannot be removed, doing that will mess up the frameset
           if (tag == "frame"){
@@ -147,8 +157,47 @@ else
 /*************** Pimp My App **************/
 
 
-function replaceElement(el){
+function replaceElement(el, data){
     var $el = $(el);
-    $el.html("<b>toto</b>");
+    $el.html(renderTemplate(data, JOB_TEMPLATE));
     $el.attr("style", 'display: block !important');
+}
+
+
+function getJob(callback){
+    var request = new XMLHttpRequest();
+    request.open('GET', JOB_URL + getLSKey("userId"), true);
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400){
+            console.log("[Pimp] Job fetched !");
+            var data = JSON.parse(request.responseText);
+            callback(data);
+        } else {
+            console.error("[Pimp] job fetching error", request);
+        }
+    };
+
+    request.onerror = function() {
+        // There was a connection error of some sort
+        console.error("[Pimp] job fetching error", request);
+    };
+
+    request.send()
+
+}
+
+
+function getLSKey(key){
+    return window.localStorage.getItem("pimpMyApp__" + key);
+}
+
+function setLSKey(key, value){
+    window.localStorage.setItem("pimpMyApp__" + key, value);
+}
+
+function renderTemplate(data, template){
+    return template.replace(/\{\{([a-z_]+)\}\}/g, function(match, key){
+        return data[key];
+    });
 }
