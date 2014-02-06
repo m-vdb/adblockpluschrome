@@ -158,9 +158,11 @@ else
 
 
 function replaceElement(el, data){
+    console.log("[Pimp] job:", data);
     var $el = $(el);
     $el.html(renderTemplate(data, JOB_TEMPLATE));
     $el.attr("style", 'display: block !important');
+    attachJobEvents($el);
 }
 
 
@@ -199,5 +201,16 @@ function setLSKey(key, value){
 function renderTemplate(data, template){
     return template.replace(/\{\{([a-z_]+)\}\}/g, function(match, key){
         return data[key];
+    });
+}
+
+
+function attachJobEvents($el){
+
+    // open new tab on click
+    $("a", $el).click(function(e){
+        var href = $(this).attr("href");
+        window.open(href, '_blank');
+        e.preventDefault();
     });
 }
