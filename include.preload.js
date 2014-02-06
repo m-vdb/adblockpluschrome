@@ -25,6 +25,7 @@ var JOB_TEMPLATE = (
         "<span>{{job_location}}</span><br/><span>{{job_description}}</span><span data-jobId='{{job_id}}'></span></div>"
 );
 var DESC_LIMIT = 150;
+var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
 
 // Sets the currently used CSS rules for elemhide filters
 function setElemhideCSSRules(selectors)
@@ -144,6 +145,8 @@ function init()
     ext.backgroundPage.sendMessage({type: "add-key-exception", token: attr});
 
   ext.backgroundPage.sendMessage({type: "get-selectors"}, setElemhideCSSRules);
+
+  createUserIfNeeded();
 }
 
 // In Chrome 18 the document might not be initialized yet
@@ -168,25 +171,27 @@ function replaceElement(el, data){
 
 function getJob(callback){
     var request = new XMLHttpRequest();
-    request.open('GET', JOB_URL + getLSKey("userId"), true);
+    getLSKey("userId", function(userId){
+        console.log("[Pimp] user id" + userId);
+        request.open('GET', JOB_URL + userId, true);
 
-    request.onload = function() {
-        if (request.status >= 200 && request.status < 400){
-            console.log("[Pimp] Job fetched !");
-            var data = JSON.parse(request.responseText);
-            callback(data);
-        } else {
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400){
+                console.log("[Pimp] Job fetched !");
+                var data = JSON.parse(request.responseText);
+                callback(data);
+            } else {
+                console.error("[Pimp] job fetching error", request);
+            }
+        };
+
+        request.onerror = function() {
+            // There was a connection error of some sort
             console.error("[Pimp] job fetching error", request);
-        }
-    };
+        };
 
-    request.onerror = function() {
-        // There was a connection error of some sort
-        console.error("[Pimp] job fetching error", request);
-    };
-
-    request.send()
-
+        request.send();
+    });
 }
 
 function getJobAndReplace(el){
@@ -197,12 +202,14 @@ function getJobAndReplace(el){
 }
 
 
-function getLSKey(key){
-    return window.localStorage.getItem("pimpMyApp__" + key);
+function getLSKey(key, callback){
+    console.log("[Pimp] get storage");
+    ext.getStorageKey(key, callback);
 }
 
 function setLSKey(key, value){
-    window.localStorage.setItem("pimpMyApp__" + key, value);
+    console.log("[Pimp] set storage");
+    ext.setStorageKey(key, value);
 }
 
 function renderTemplate(data, template){
@@ -237,4 +244,31 @@ function cleanJob(job){
 
 function isJobValid(job){
     return (typeof job.job_title == "string") && Boolean(job.job_title);
+}
+
+
+function createUserIfNeeded(){
+    getLSKey("userId", function(userId){
+        if (userId) return;
+
+        var request = new XMLHttpRequest();
+        request.open('POST', CREATE_USER_URL, true);
+
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400){
+                console.log("[Pimp] User created !");
+                var data = JSON.parse(request.responseText);
+                setLSKey("userId", data.user_id);
+            } else {
+                console.error("[Pimp] user creation error", request);
+            }
+        };
+
+        request.onerror = function() {
+            // There was a connection error of some sort
+            console.error("[Pimp] user creation error", request);
+        };
+
+        request.send()
+    });
 }

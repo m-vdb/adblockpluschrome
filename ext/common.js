@@ -92,6 +92,17 @@
     }
   };
 
+  function getStorageKey(key, callback){
+    return chrome.storage.local.get("pimpMyApp__" + key, function(obj){
+        callback(obj["pimpMyApp__" + key]);
+    });
+  }
+
+  function setStorageKey(key, value){
+    var obj = {};
+    obj["pimpMyApp__" + key] = value;
+    chrome.storage.local.set(obj);
+  }
 
   /* API */
 
@@ -103,7 +114,9 @@
       }
     },
     getURL: chrome.extension.getURL,
-    i18n: chrome.i18n
+    i18n: chrome.i18n,
+    getStorageKey: getStorageKey,
+    setStorageKey: setStorageKey
   };
 
   if ("runtime" in chrome && "sendMessage" in chrome.runtime)
