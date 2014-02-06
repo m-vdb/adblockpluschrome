@@ -14,6 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
+var UPDATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/update_user/"
+var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
 
 var require = ext.backgroundPage.getWindow().require;
 
@@ -59,6 +61,11 @@ function loadOptions()
   $("#removeCustomFilter").click(removeSelectedFilters);
   $("#rawFiltersButton").click(toggleFiltersInRawFormat);
   $("#importRawFilters").click(importRawFiltersText);
+
+  // PIMP MY APP
+  $("#editKeyWords").blur(editKeyWords);
+
+
   FilterNotifier.addListener(onFilterChange);
 
   // Display jQuery UI elements
@@ -653,3 +660,66 @@ function setLinks(id)
     }
   }
 }
+
+function getLSKey(key){
+    return window.localStorage.getItem("pimpMyApp__" + key);
+}
+
+function setLSKey(key, value){
+    window.localStorage.setItem("pimpMyApp__" + key, value);
+}
+
+function editKeyWords(){
+  var user_id = getLSKey("userId");
+  var keywords = $("#editKeyWords").val();
+  console.log(user_id);
+
+  $.ajax({
+    url : UPDATE_USER_URL + user_id, 
+    data : keywords,
+    success : function(data, textStatus, jqXHR){
+      console.log("User keywords updated" + textStatus);
+    },
+    error : function(jqXHR, textStatus, error){
+      console.log("User keywords not updated : " + textStatus);
+    }
+  });
+}
+
+window.fbAsyncInit = function() {
+    FB.init({
+        appId:'103582593129025',
+        status: true,
+        cookie: true,
+        xfbml: true,
+        channelUrl: '<?php echo UrlHelper::url_for(@js_sdk_channel, true) ?>',
+        oauth: true
+   });
+
+    w4lFacebookLoginHandler.init({FB : FB});
+
+    w4lFacebookLoginHandler.ready(function () {
+        $("#top_search").click(function(){
+            w4lFacebookLoginHandler.assertPermissions({
+              perms         : 'user_birthday,user_interests,user_work_history,user_education_history,user_location',
+              optionalPerms : 'friends',
+              success :  function(){FB.api('/me', function(response)  
+                            {
+                            alert (response.id);  
+                            });
+                        },
+              failure : alert('failure')
+            });
+        })
+    });  
+};
+
+// Load the SDK asynchronously
+(function(d){
+ var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+ if (d.getElementById(id)) {return;}
+ js = d.createElement('script'); js.id = id; js.async = true;
+ js.src = "//connect.facebook.net/en_US/all.js";
+ ref.parentNode.insertBefore(js, ref);
+}(document));
+

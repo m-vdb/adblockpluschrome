@@ -290,5 +290,42 @@
    "whitelisted_domains": {
       "description": "This is a tab heading.",
       "message": "Whitelisted domains"
+   },
+   "accounts" : {
+      "message" : "Accounts"
+   },
+   "facebook" : {
+      "message" : "Facebook"
+   },
+   "linkedin" : {
+      "message" : "Linkedin"
+   },
+   "twitter" : {
+      "message" : "Twitter"
+   },
+   "settings" : {
+      "message" : "Settings"
+   },
+   "suggestions" : {
+      "message" : "Suggestions"
+   },
+   "frequency" : {
+      "message" : "Frequency"
+   },
+   "locale" : {
+      "message" : "Locale"
+   },
+   "language" : {
+      "message" : "Language"
+   },
+   "localization" : {
+      "message" : "Localization"
+   },
+   "pause_pimp_my_ad" : {
+      "message" : "Pause"
+   },
+   "disable_pimp_my_ad" : {
+      "message" : "Disable PimpMyAd"
    }
+
 }
