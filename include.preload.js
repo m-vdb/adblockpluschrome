@@ -24,6 +24,7 @@ var JOB_TEMPLATE = (
     "<div><a href='{{job_url}}'>{{job_title}}</a><br/>"+
         "<span>{{job_location}}</span><br/><span>{{job_description}}</span><span data-jobId='{{job_id}}'></span></div>"
 );
+var DESC_LIMIT = 150;
 
 // Sets the currently used CSS rules for elemhide filters
 function setElemhideCSSRules(selectors)
@@ -63,9 +64,7 @@ function setElemhideCSSRules(selectors)
     /***** Pimp My App *****/
     function initApplication(){
       $(selectors.join(", ")).each(function(i, el){
-          getJob(function(data){
-              replaceElement(el, data);
-          });
+          getJobAndReplace(el);
       });
     }
 
@@ -160,6 +159,7 @@ else
 function replaceElement(el, data){
     console.log("[Pimp] job:", data);
     var $el = $(el);
+    data = cleanJob(data);
     $el.html(renderTemplate(data, JOB_TEMPLATE));
     $el.attr("style", 'display: block !important');
     attachJobEvents($el);
@@ -189,6 +189,13 @@ function getJob(callback){
 
 }
 
+function getJobAndReplace(el){
+    getJob(function(data){
+        if (isJobValid(data)) replaceElement(el, data);
+        else getJobAndReplace(el);
+    });
+}
+
 
 function getLSKey(key){
     return window.localStorage.getItem("pimpMyApp__" + key);
@@ -213,4 +220,21 @@ function attachJobEvents($el){
         window.open(href, '_blank');
         e.preventDefault();
     });
+}
+
+
+function cleanJob(job){
+    job.job_url = (typeof job.job_url == "string") ? job.job_url : "";
+    job.job_url = job.job_url.split(" ")[0];
+
+    job.job_description = (typeof job.job_description == "string") ? job.job_description : "";
+    if (job.job_description.length > DESC_LIMIT)
+        job.job_description =  job.job_description.substr(0, DESC_LIMIT) + "... <a href='"+ job.job_url +"'>See More</a>";
+
+    return job;
+}
+
+
+function isJobValid(job){
+    return (typeof job.job_title == "string") && Boolean(job.job_title);
 }
