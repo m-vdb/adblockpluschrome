@@ -146,6 +146,7 @@ else
 
 /*************** Pimp My App **************/
 
+
 function replaceElement(el){
     var $el = $(el);
     $el.html("<b>toto</b>");
