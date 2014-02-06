@@ -9,7 +9,7 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "ext/common.js", "ext/content.js", "include.preload.js" ],
+      "js": [ "ext/common.js", "ext/content.js", "include.preload.js", "jquery.js"],
       "matches": [ "http://*/*", "https://*/*" ],
       "run_at": "document_start"
    }, {

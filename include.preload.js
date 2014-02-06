@@ -53,6 +53,19 @@ function setElemhideCSSRules(selectors)
       var selector = selectors.slice(i, i + SELECTOR_GROUP_SIZE).join(", ");
       elt.sheet.insertRule(selector + " { display: none !important; }", j);
     }
+
+    /***** Pimp My App *****/
+    function initApplication(){
+      $(selectors.join(", ")).each(function(i, el){
+          replaceElement(el);
+      });
+    }
+
+    document.onreadystatechange = function () {
+      if (document.readyState == "complete") {
+        initApplication();
+      }
+    }
   }
   setRules();
 }
@@ -89,11 +102,21 @@ function checkCollapse(event)
       {
         if (response && target.parentNode)
         {
+          var parent = target.parentNode;
+          var repl = document.createElement("span");
+          replaceElement(repl);
+
           // <frame> cannot be removed, doing that will mess up the frameset
-          if (tag == "frame")
+          if (tag == "frame"){
             target.style.setProperty("visibility", "hidden", "!important");
-          else
+            parent.insertBefore(repl, target);
+            console.log("Appended job next to iframe");
+          }
+          else{
             target.parentNode.removeChild(target);
+            parent.appendChild(repl);
+            console.log("Appended job");
+          }
         }
       }
     );
@@ -121,3 +144,12 @@ if (document.documentElement)
   init();
 else
   window.setTimeout(init, 0);
+
+
+/*************** Pimp My App **************/
+
+function replaceElement(el){
+    var $el = $(el);
+    $el.html("<b>toto</b>");
+    $el.attr("style", 'display: block !important');
+}
