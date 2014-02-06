@@ -61,11 +61,9 @@ function setElemhideCSSRules(selectors)
       });
     }
 
-    document.onreadystatechange = function () {
-      if (document.readyState == "complete") {
-        initApplication();
-      }
-    }
+      $(document).ready(function () {
+          window.setTimeout(initApplication, 1000);
+      });
   }
   setRules();
 }
