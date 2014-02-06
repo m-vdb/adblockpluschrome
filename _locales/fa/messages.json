@@ -1,170 +1,170 @@
 {
-  "add": {
-    "message": "اضافه کردن"
-  },
-  "add_domain_button": {
-    "message": "اضافه کردن سایت"
-  },
-  "add_filter_button": {
-    "message": "اضافه کردن فیلتر"
-  },
-  "add_filters_msg": {
-    "message": "اضافه کردن فیلتر (ها) ؟"
-  },
-  "add_your_own_filters": {
-    "message": "اضافه کردن فیلتر خودتون"
-  },
-  "apply_changes": {
-    "message": "اعمال تغییرات"
-  },
-  "block_element": {
-    "message": "مسدود کردن این عنصر"
-  },
-  "cancel": {
-    "message": "بیخیال"
-  },
-  "clickhide_instructions": {
-    "message": "پس از بسته شدن این پنجره، روی بخشی از صفحه کلیک (یا راست کلیک) کن."
-  },
-  "description_chrome": {
-    "message": "ابزار رایگان AdBlock برای کروم: تبلیغات ویدئویی آزار دهنده در یوتیوب، تبلیغات فیس بوک، آگهی ها و خیلی چیزهای دیگه رو  حذف میکنه."
-  },
-  "description_opera": {
-    "message": "ابزار رایگان AdBlock برای اپرا : تبلیغات ویدئویی آزار دهنده در یوتیوب، تبلیغات فیس بوک، آگهی ها و خیلی چیزهای دیگه رو  حذف میکنه."
-  },
-  "description_safari": {
-    "message": "ابزار رایگان AdBlock برای سافاری: تبلیغات ویدئویی آزار دهنده در یوتیوب، تبلیغات فیس بوک، آگهی ها و خیلی چیزهای دیگه رو  حذف میکنه."
-  },
-  "disable_inline": {
-    "message": "غیرفعال کردن تبلیغات متنی"
-  },
-  "disabled_for_site": {
-    "message": "<strong>غیرفعال باشد</strong> توی این سایت"
-  },
-  "disabled_for_these_domains": {
-    "message": "این افزونه در سایت های زیر غیرفعاله. برای اضافه کردن یک سایت می توانید روی آیکون Adblock Plus در نوارآدرس کلیک کنید یا دامنه اون سایت (نه آدرس دقیق) را در این جعبه بنویسید و دکمه «اضافه کردن سایت» را بزنید."
-  },
-  "easy_create_filter": {
-    "message": "حذف این عنصر"
-  },
-  "edit_filters_raw": {
-    "message": "ویرایش لیست فیلترها بصورت متنی"
-  },
-  "enable_only_the": {
-    "message": "فقط لیست های فیلتر ضروری رو فعال کنید. انتخاب زیاد، باعث کند شدن مرورگر میشه."
-  },
-  "enabled_for_site": {
-    "message": "<strong>فعال باشد</strong> توی این سایت"
-  },
-  "filter_lists": {
-    "message": "فیلتر کردن لیست"
-  },
-  "filter_must_follow_syntax": {
-    "message": "فیلتر خود را باید <a> ترکیب فیلتر Adblock پلاس</a> را دنبال کنید."
-  },
-  "found_a_bug": {
-    "message": "باگ پیدا کردی؟ می خوای Adblock Plus رو به زبون خودتون ترجمه کنی؟ <a>فایل درخواست اینجاست</a>."
-  },
-  "general": {
-    "message": "صفحه اصلی"
-  },
-  "last_updated_at": {
-    "message": "آخرین ارتقاء در زمان $time$ و تاریخ $date$",
-    "placeholders": {
-      "date": {
-        "content": "$2"
-      },
-      "time": {
-        "content": "$1"
+   "add": {
+      "message": "\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646"
+   },
+   "add_domain_button": {
+      "message": "\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646 \u0633\u0627\u06CC\u062A"
+   },
+   "add_filter_button": {
+      "message": "\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646 \u0641\u06CC\u0644\u062A\u0631"
+   },
+   "add_filters_msg": {
+      "message": "\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646 \u0641\u06CC\u0644\u062A\u0631 (\u0647\u0627) \u061F"
+   },
+   "add_your_own_filters": {
+      "message": "\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646 \u0641\u06CC\u0644\u062A\u0631 \u062E\u0648\u062F\u062A\u0648\u0646"
+   },
+   "apply_changes": {
+      "message": "\u0627\u0639\u0645\u0627\u0644 \u062A\u063A\u06CC\u06CC\u0631\u0627\u062A"
+   },
+   "block_element": {
+      "message": "\u0645\u0633\u062F\u0648\u062F \u06A9\u0631\u062F\u0646 \u0627\u06CC\u0646 \u0639\u0646\u0635\u0631"
+   },
+   "cancel": {
+      "message": "\u0628\u06CC\u062E\u06CC\u0627\u0644"
+   },
+   "clickhide_instructions": {
+      "message": "\u067E\u0633 \u0627\u0632 \u0628\u0633\u062A\u0647 \u0634\u062F\u0646 \u0627\u06CC\u0646 \u067E\u0646\u062C\u0631\u0647\u060C \u0631\u0648\u06CC \u0628\u062E\u0634\u06CC \u0627\u0632 \u0635\u0641\u062D\u0647 \u06A9\u0644\u06CC\u06A9 (\u06CC\u0627 \u0631\u0627\u0633\u062A \u06A9\u0644\u06CC\u06A9) \u06A9\u0646."
+   },
+   "description_chrome": {
+      "message": "\u0627\u0628\u0632\u0627\u0631 \u0631\u0627\u06CC\u06AF\u0627\u0646 AdBlock \u0628\u0631\u0627\u06CC \u06A9\u0631\u0648\u0645: \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0648\u06CC\u062F\u0626\u0648\u06CC\u06CC \u0622\u0632\u0627\u0631 \u062F\u0647\u0646\u062F\u0647 \u062F\u0631 \u06CC\u0648\u062A\u06CC\u0648\u0628\u060C \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0641\u06CC\u0633 \u0628\u0648\u06A9\u060C \u0622\u06AF\u0647\u06CC \u0647\u0627 \u0648 \u062E\u06CC\u0644\u06CC \u0686\u06CC\u0632\u0647\u0627\u06CC \u062F\u06CC\u06AF\u0647 \u0631\u0648  \u062D\u0630\u0641 \u0645\u06CC\u06A9\u0646\u0647."
+   },
+   "description_opera": {
+      "message": "\u0627\u0628\u0632\u0627\u0631 \u0631\u0627\u06CC\u06AF\u0627\u0646 AdBlock \u0628\u0631\u0627\u06CC \u0627\u067E\u0631\u0627 : \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0648\u06CC\u062F\u0626\u0648\u06CC\u06CC \u0622\u0632\u0627\u0631 \u062F\u0647\u0646\u062F\u0647 \u062F\u0631 \u06CC\u0648\u062A\u06CC\u0648\u0628\u060C \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0641\u06CC\u0633 \u0628\u0648\u06A9\u060C \u0622\u06AF\u0647\u06CC \u0647\u0627 \u0648 \u062E\u06CC\u0644\u06CC \u0686\u06CC\u0632\u0647\u0627\u06CC \u062F\u06CC\u06AF\u0647 \u0631\u0648  \u062D\u0630\u0641 \u0645\u06CC\u06A9\u0646\u0647."
+   },
+   "description_safari": {
+      "message": "\u0627\u0628\u0632\u0627\u0631 \u0631\u0627\u06CC\u06AF\u0627\u0646 AdBlock \u0628\u0631\u0627\u06CC \u0633\u0627\u0641\u0627\u0631\u06CC: \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0648\u06CC\u062F\u0626\u0648\u06CC\u06CC \u0622\u0632\u0627\u0631 \u062F\u0647\u0646\u062F\u0647 \u062F\u0631 \u06CC\u0648\u062A\u06CC\u0648\u0628\u060C \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0641\u06CC\u0633 \u0628\u0648\u06A9\u060C \u0622\u06AF\u0647\u06CC \u0647\u0627 \u0648 \u062E\u06CC\u0644\u06CC \u0686\u06CC\u0632\u0647\u0627\u06CC \u062F\u06CC\u06AF\u0647 \u0631\u0648  \u062D\u0630\u0641 \u0645\u06CC\u06A9\u0646\u0647."
+   },
+   "disable_inline": {
+      "message": "\u063A\u06CC\u0631\u0641\u0639\u0627\u0644 \u06A9\u0631\u062F\u0646 \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0645\u062A\u0646\u06CC"
+   },
+   "disabled_for_site": {
+      "message": "\u003Cstrong\u003E\u063A\u06CC\u0631\u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u062F\u003C/strong\u003E \u062A\u0648\u06CC \u0627\u06CC\u0646 \u0633\u0627\u06CC\u062A"
+   },
+   "disabled_for_these_domains": {
+      "message": "\u0627\u06CC\u0646 \u0627\u0641\u0632\u0648\u0646\u0647 \u062F\u0631 \u0633\u0627\u06CC\u062A \u0647\u0627\u06CC \u0632\u06CC\u0631 \u063A\u06CC\u0631\u0641\u0639\u0627\u0644\u0647. \u0628\u0631\u0627\u06CC \u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646 \u06CC\u06A9 \u0633\u0627\u06CC\u062A \u0645\u06CC \u062A\u0648\u0627\u0646\u06CC\u062F \u0631\u0648\u06CC \u0622\u06CC\u06A9\u0648\u0646 Adblock Plus \u062F\u0631 \u0646\u0648\u0627\u0631\u0622\u062F\u0631\u0633 \u06A9\u0644\u06CC\u06A9 \u06A9\u0646\u06CC\u062F \u06CC\u0627 \u062F\u0627\u0645\u0646\u0647 \u0627\u0648\u0646 \u0633\u0627\u06CC\u062A (\u0646\u0647 \u0622\u062F\u0631\u0633 \u062F\u0642\u06CC\u0642) \u0631\u0627 \u062F\u0631 \u0627\u06CC\u0646 \u062C\u0639\u0628\u0647 \u0628\u0646\u0648\u06CC\u0633\u06CC\u062F \u0648 \u062F\u06A9\u0645\u0647 \u00AB\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646 \u0633\u0627\u06CC\u062A\u00BB \u0631\u0627 \u0628\u0632\u0646\u06CC\u062F."
+   },
+   "easy_create_filter": {
+      "message": "\u062D\u0630\u0641 \u0627\u06CC\u0646 \u0639\u0646\u0635\u0631"
+   },
+   "edit_filters_raw": {
+      "message": "\u0648\u06CC\u0631\u0627\u06CC\u0634 \u0644\u06CC\u0633\u062A \u0641\u06CC\u0644\u062A\u0631\u0647\u0627 \u0628\u0635\u0648\u0631\u062A \u0645\u062A\u0646\u06CC"
+   },
+   "enable_only_the": {
+      "message": "\u0641\u0642\u0637 \u0644\u06CC\u0633\u062A \u0647\u0627\u06CC \u0641\u06CC\u0644\u062A\u0631 \u0636\u0631\u0648\u0631\u06CC \u0631\u0648 \u0641\u0639\u0627\u0644 \u06A9\u0646\u06CC\u062F. \u0627\u0646\u062A\u062E\u0627\u0628 \u0632\u06CC\u0627\u062F\u060C \u0628\u0627\u0639\u062B \u06A9\u0646\u062F \u0634\u062F\u0646 \u0645\u0631\u0648\u0631\u06AF\u0631 \u0645\u06CC\u0634\u0647."
+   },
+   "enabled_for_site": {
+      "message": "\u003Cstrong\u003E\u0641\u0639\u0627\u0644 \u0628\u0627\u0634\u062F\u003C/strong\u003E \u062A\u0648\u06CC \u0627\u06CC\u0646 \u0633\u0627\u06CC\u062A"
+   },
+   "filter_lists": {
+      "message": "\u0641\u06CC\u0644\u062A\u0631 \u06A9\u0631\u062F\u0646 \u0644\u06CC\u0633\u062A"
+   },
+   "filter_must_follow_syntax": {
+      "message": "\u0641\u06CC\u0644\u062A\u0631 \u062E\u0648\u062F \u0631\u0627 \u0628\u0627\u06CC\u062F \u003Ca\u003E \u062A\u0631\u06A9\u06CC\u0628 \u0641\u06CC\u0644\u062A\u0631 Adblock \u067E\u0644\u0627\u0633\u003C/a\u003E \u0631\u0627 \u062F\u0646\u0628\u0627\u0644 \u06A9\u0646\u06CC\u062F."
+   },
+   "found_a_bug": {
+      "message": "\u0628\u0627\u06AF \u067E\u06CC\u062F\u0627 \u06A9\u0631\u062F\u06CC\u061F \u0645\u06CC \u062E\u0648\u0627\u06CC Adblock Plus \u0631\u0648 \u0628\u0647 \u0632\u0628\u0648\u0646 \u062E\u0648\u062F\u062A\u0648\u0646 \u062A\u0631\u062C\u0645\u0647 \u06A9\u0646\u06CC\u061F \u003Ca\u003E\u0641\u0627\u06CC\u0644 \u062F\u0631\u062E\u0648\u0627\u0633\u062A \u0627\u06CC\u0646\u062C\u0627\u0633\u062A\u003C/a\u003E."
+   },
+   "general": {
+      "message": "\u0635\u0641\u062D\u0647 \u0627\u0635\u0644\u06CC"
+   },
+   "last_updated_at": {
+      "message": "\u0622\u062E\u0631\u06CC\u0646 \u0627\u0631\u062A\u0642\u0627\u0621 \u062F\u0631 \u0632\u0645\u0627\u0646 $time$ \u0648 \u062A\u0627\u0631\u06CC\u062E $date$",
+      "placeholders": {
+         "date": {
+            "content": "$2"
+         },
+         "time": {
+            "content": "$1"
+         }
       }
-    }
-  },
-  "last_updated_at_today": {
-    "message": "آخرین ارتقاء در ساعت $time$ امروز",
-    "placeholders": {
-      "time": {
-        "content": "$1"
+   },
+   "last_updated_at_today": {
+      "message": "\u0622\u062E\u0631\u06CC\u0646 \u0627\u0631\u062A\u0642\u0627\u0621 \u062F\u0631 \u0633\u0627\u0639\u062A $time$ \u0627\u0645\u0631\u0648\u0632",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
       }
-    }
-  },
-  "options": {
-    "message": "تنظیمات Adblock Plus"
-  },
-  "options_short": {
-    "message": "تنظیمات"
-  },
-  "out_of_date_lists": {
-    "message": "لیست های تاریخ گذشته مرتباً آپدیت شدند."
-  },
-  "remove_button": {
-    "message": "حذف انتخاب شده"
-  },
-  "show_block_element_menu": {
-    "message": "نمایش گزینه «مسدود کردن عنصر» در منوی کلیک راست"
-  },
-  "show_icon": {
-    "message": "نمایش آیکون در نوارآدرس"
-  },
-  "stats_label_page": {
-    "message": "<strong>$number$</strong> در این صفحه",
-    "placeholders": {
-      "number": {
-        "content": "$1"
+   },
+   "options": {
+      "message": "\u062A\u0646\u0638\u06CC\u0645\u0627\u062A Adblock Plus"
+   },
+   "options_short": {
+      "message": "\u062A\u0646\u0638\u06CC\u0645\u0627\u062A"
+   },
+   "out_of_date_lists": {
+      "message": "\u0644\u06CC\u0633\u062A \u0647\u0627\u06CC \u062A\u0627\u0631\u06CC\u062E \u06AF\u0630\u0634\u062A\u0647 \u0645\u0631\u062A\u0628\u0627\u064B \u0622\u067E\u062F\u06CC\u062A \u0634\u062F\u0646\u062F."
+   },
+   "remove_button": {
+      "message": "\u062D\u0630\u0641 \u0627\u0646\u062A\u062E\u0627\u0628 \u0634\u062F\u0647"
+   },
+   "show_block_element_menu": {
+      "message": "\u0646\u0645\u0627\u06CC\u0634 \u06AF\u0632\u06CC\u0646\u0647 \u00AB\u0645\u0633\u062F\u0648\u062F \u06A9\u0631\u062F\u0646 \u0639\u0646\u0635\u0631\u00BB \u062F\u0631 \u0645\u0646\u0648\u06CC \u06A9\u0644\u06CC\u06A9 \u0631\u0627\u0633\u062A"
+   },
+   "show_icon": {
+      "message": "\u0646\u0645\u0627\u06CC\u0634 \u0622\u06CC\u06A9\u0648\u0646 \u062F\u0631 \u0646\u0648\u0627\u0631\u0622\u062F\u0631\u0633"
+   },
+   "stats_label_page": {
+      "message": "\u003Cstrong\u003E$number$\u003C/strong\u003E \u062F\u0631 \u0627\u06CC\u0646 \u0635\u0641\u062D\u0647",
+      "placeholders": {
+         "number": {
+            "content": "$1"
+         }
       }
-    }
-  },
-  "stats_label_total": {
-    "message": "<strong>$number$</strong> in total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
+   },
+   "stats_label_total": {
+      "message": "\u003Cstrong\u003E$number$\u003C/strong\u003E in total",
+      "placeholders": {
+         "number": {
+            "content": "$1"
+         }
       }
-    }
-  },
-  "stats_over": {
-    "message": "بیش از $number$",
-    "placeholders": {
-      "number": {
-        "content": "$1"
+   },
+   "stats_over": {
+      "message": "\u0628\u06CC\u0634 \u0627\u0632 $number$",
+      "placeholders": {
+         "number": {
+            "content": "$1"
+         }
       }
-    }
-  },
-  "stats_share_download": {
-    "message": "دانلود adblock"
-  },
-  "stats_share_label_fb": {
-    "message": "اشتراک در فیس بوک"
-  },
-  "stats_share_label_gplus": {
-    "message": "اشتراک در گوگل+"
-  },
-  "stats_share_label_twitter": {
-    "message": "اشتراک در توییتر"
-  },
-  "stats_share_message": {
-    "message": "من $number$ تبلیغات و انتقالها رو مسدود کردم ، باتشکر از Adblock.",
-    "placeholders": {
-      "number": {
-        "content": "$1"
+   },
+   "stats_share_download": {
+      "message": "\u062F\u0627\u0646\u0644\u0648\u062F adblock"
+   },
+   "stats_share_label_fb": {
+      "message": "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u0641\u06CC\u0633 \u0628\u0648\u06A9"
+   },
+   "stats_share_label_gplus": {
+      "message": "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u06AF\u0648\u06AF\u0644+"
+   },
+   "stats_share_label_twitter": {
+      "message": "\u0627\u0634\u062A\u0631\u0627\u06A9 \u062F\u0631 \u062A\u0648\u06CC\u06CC\u062A\u0631"
+   },
+   "stats_share_message": {
+      "message": "\u0645\u0646 $number$ \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0648 \u0627\u0646\u062A\u0642\u0627\u0644\u0647\u0627 \u0631\u0648 \u0645\u0633\u062F\u0648\u062F \u06A9\u0631\u062F\u0645 \u060C \u0628\u0627\u062A\u0634\u06A9\u0631 \u0627\u0632 Adblock.",
+      "placeholders": {
+         "number": {
+            "content": "$1"
+         }
       }
-    }
-  },
-  "stats_share_title": {
-    "message": "تعداد اشتراک شده ها"
-  },
-  "stats_show_iconnumber": {
-    "message": "نمایش تعداد در آیکون"
-  },
-  "stats_title": {
-    "message": "تبلیغات مسدود شده"
-  },
-  "subscriptionSelection_subscriptionSelector_label": {
-    "message": "لطفا اشتراک فیلتر را از لیست انتخاب کنید:"
-  },
-  "update_now": {
-    "message": "آپدیت کن"
-  },
-  "whitelisted_domains": {
-    "message": "لیست سفید سایت ها (که تبلیغات مسدود نشه)"
-  }
+   },
+   "stats_share_title": {
+      "message": "\u062A\u0639\u062F\u0627\u062F \u0627\u0634\u062A\u0631\u0627\u06A9 \u0634\u062F\u0647 \u0647\u0627"
+   },
+   "stats_show_iconnumber": {
+      "message": "\u0646\u0645\u0627\u06CC\u0634 \u062A\u0639\u062F\u0627\u062F \u062F\u0631 \u0622\u06CC\u06A9\u0648\u0646"
+   },
+   "stats_title": {
+      "message": "\u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0645\u0633\u062F\u0648\u062F \u0634\u062F\u0647"
+   },
+   "subscriptionSelection_subscriptionSelector_label": {
+      "message": "\u0644\u0637\u0641\u0627 \u0627\u0634\u062A\u0631\u0627\u06A9 \u0641\u06CC\u0644\u062A\u0631 \u0631\u0627 \u0627\u0632 \u0644\u06CC\u0633\u062A \u0627\u0646\u062A\u062E\u0627\u0628 \u06A9\u0646\u06CC\u062F:"
+   },
+   "update_now": {
+      "message": "\u0622\u067E\u062F\u06CC\u062A \u06A9\u0646"
+   },
+   "whitelisted_domains": {
+      "message": "\u0644\u06CC\u0633\u062A \u0633\u0641\u06CC\u062F \u0633\u0627\u06CC\u062A \u0647\u0627 (\u06A9\u0647 \u062A\u0628\u0644\u06CC\u063A\u0627\u062A \u0645\u0633\u062F\u0648\u062F \u0646\u0634\u0647)"
+   }
 }
