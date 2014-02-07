@@ -17,16 +17,16 @@ body {
   display: table;
   width: 100%;
   padding: 5px 10px;
-  background: #79c056;
+  background: #f1f1f1;
   text-transform: uppercase;
   box-sizing: border-box;
 }
 
 .pimpmy .header h3 {
   display: table-cell;
-  font-weight: 400;
-  font-size: 15px;
-  color: #fff;
+  font-weight: normal;
+  font-size: 13px;
+  color: #b5b5b5;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
@@ -34,7 +34,7 @@ body {
 .pimpmy .header .close {
   display: table-cell;
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
+  color: #b5b5b5;
   text-align: right;
   cursor: pointer;
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .pimpmy .content h2 a {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   color: #0069a6;
   font-family: 'Open Sans', sans-serif;
@@ -67,7 +67,7 @@ body {
 
 .pimpmy .content p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   color: #8b8b8b;
   margin: 0;
   padding-left: 26px;
@@ -91,7 +91,7 @@ body {
   padding: 0 20px 20px 20px;
 }
 
-.pimpmy .actions .btn {
+.pimpmy .actions .btn, .popover-action .btn {
   display: inline-block;
   border: none;
   text-align: center;
@@ -103,16 +103,16 @@ body {
   color: #fff;
   margin-right: 15px;
   padding: 10px 30px;
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Open Sans', sans-serif;
-  line-height: 15px;
+  line-height: 18px;
   box-sizing: border-box;
   border-radius: 4px;
   background: #79c056;
   box-shadow: 0 3px 0 #69ad48;
 }
 
-.pimpmy .actions .btn:active {
+.pimpmy .actions .btn:active, .popover-action .btn:active {
     position: relative;
     top: 3px;
     box-shadow: 0 2px 0 #69ad48;
@@ -235,4 +235,17 @@ body {
 
 .popup .content .settings {
   background: url(integration/img/ico-settings.png) 0 4px no-repeat;
+}
+
+.popover-action input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e6e6e6;
+  padding: 3px 5px;
+  margin-bottom: 10px;
+}
+
+.popover-action .btn {
+  width: 100%;
+  margin-top: 10px;
 }

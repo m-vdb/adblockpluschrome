@@ -50,15 +50,15 @@ var JOB_TEMPLATE = [
     // apply
     '<button data-action="apply" class="btn" data-container="body" data-toggle="popover"',
     'data-placement="bottom" data-html="true"',
-    'data-content="<span data-jobapplied=\'{{job_id}}\'>Email <input type=\'text\' data-email/><br/>',
-    'LinkedIn profile <input type=\'text\' data-linkedin/><br/><button type=\'button\'',
-    'data-action=\'doApply\'>&gt;&gt;</button></span>" data-html="true">Apply</button>',
+    'data-content="<div data-jobapplied=\'{{job_id}}\' class=\'popover-action\' data-poped><form><input type=\'text\' data-email ',
+    'placeholder=\'Enter your email\'/><input type=\'text\' data-linkedin placeholder=\'Link to your LinkedIn profile\'/>',
+    '<button type=\'button\' class=\'btn\' data-action=\'doApply\'>Apply</button></form></div>" data-html="true">Apply</button>',
     // refer
     '<button data-action="refer" class="recommend" data-container="body" data-toggle="popover"',
     'data-placement="bottom" data-html="true"',
-    'data-content="<span data-jobrefered=\'{{job_id}}\'>Your email <input type=\'text\' data-fromemail/><br/>',
-    'Friend email <input type=\'text\' data-friendemail/><br/><button type=\'button\'',
-    'data-action=\'doRefer\'>&gt;&gt;</button></span>" data-html="true">Recommend</button>',
+    'data-content="<div data-poped data-jobrefered=\'{{job_id}}\' class=\'popover-action\'><form><input type=\'text\' data-fromemail ',
+    'placeholder=\'Your email\'/><input type=\'text\' data-friendemail placeholder=\'Friend email\'/><button type=\'button\'',
+    'class=\'btn\' data-action=\'doRefer\'>Recommend</button></form></div>" data-html="true">Recommend</button>',
     '<span data-jobid="{{job_id}}"></span>',
     '</div>',
     '</div>',
@@ -66,6 +66,7 @@ var JOB_TEMPLATE = [
 ].join("");
 
 var DESC_LIMIT = 150;
+var TITLE_LIMIT = 30;
 var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
 var JOB_APPLY_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/apply_job/";
 var JOB_REFER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/refer_job/";
@@ -295,7 +296,10 @@ function attachJobEvents($el){
                 email: $('[data-email]', $popIn).val(),
                 linkedin: $('[data-linkedin]', $popIn).val()
             };
-            applyToJob(jobId, data);
+            applyToJob(jobId, data, $el);
+        });
+        $("[data-poped]").click(function(e){
+            e.stopPropagation();
         });
     });
 
@@ -310,13 +314,24 @@ function attachJobEvents($el){
                 from_email: $('[data-fromemail]', $popIn).val(),
                 friend_email: $('[data-friendemail]', $popIn).val()
             };
-            referJob(jobId, data);
+            referJob(jobId, data, $el);
+        });
+        $("[data-poped]").click(function(e){
+            e.stopPropagation();
         });
     });
 
-    // 
+    // close the job
     $(".close", $el).on("click", function(){
       $el.remove();
+    });
+
+    // dismiss popover on external click
+    $("body").click(function(){
+        $("[data-toggle=popover]").popover("hide");
+    });
+    $("[data-toggle=popover]").click(function(e){
+        e.stopPropagation();
     });
 }
 
@@ -326,8 +341,11 @@ function cleanJob(job){
     job.job_url = job.job_url.split(" ")[0];
 
     job.job_description = (typeof job.job_description == "string") ? job.job_description : "";
+    job.job_title = (typeof job.job_title == "string") ? job.job_title : "";
     if (job.job_description.length > DESC_LIMIT)
         job.job_description =  job.job_description.substr(0, DESC_LIMIT) + "... <a href='"+ job.job_url +"'>See More</a>";
+    if (job.job_title.length > TITLE_LIMIT)
+        job.job_title = job.job_title.substr(0, TITLE_LIMIT) + "...";
 
     return job;
 }
@@ -364,7 +382,7 @@ function createUserIfNeeded(){
     });
 }
 
-function applyToJob(jobId, data){
+function applyToJob(jobId, data, $el){
     console.log("[Pimp] apply: ", jobId, data);
     getLSKey("userId", function(userId){
         var request = new XMLHttpRequest();
@@ -373,21 +391,33 @@ function applyToJob(jobId, data){
         request.onload = function() {
             if (request.status >= 200 && request.status < 400){
                 console.log("[Pimp] Job applied !");
+                $("[data-toggle=popover]").popover("hide");
+                $(".content", $el).html(
+                    "<h2>Congratulation</h2>" +
+                        "<p>You've successfuly submitted your application.</p>"
+                );
+                $(".actions", $el).html("");
             } else {
                 console.error("[Pimp] cannot apply to the job", request);
+                $("[data-toggle=popover]").popover("hide");
+                $(".content", $el).html("<h2>Oh Oh, something happened</h2>");
+                $(".actions", $el).html("");
             }
         };
 
         request.onerror = function() {
             // There was a connection error of some sort
             console.error("[Pimp] cannot apply to the job.", request);
+            $("[data-toggle=popover]").popover("hide");
+            $(".content", $el).html("<h2>Oh Oh, something happened</h2>");
+            $(".actions", $el).html("");
         };
 
         request.send(data);
     });
 }
 
-function referJob(jobId, data){
+function referJob(jobId, data, $el){
     console.log("[Pimp] refer: ", jobId, data);
     getLSKey("userId", function(userId){
         $.ajax({
@@ -396,9 +426,18 @@ function referJob(jobId, data){
             data: data,
             success: function(response){
                 console.log("[Pimp] Job refered !");
+                $("[data-toggle=popover]").popover("hide");
+                $(".content", $el).html(
+                    "<h2>Congratulation</h2>" +
+                        "<p>You've successfuly referred the job.</p>"
+                );
+                $(".actions", $el).html("");
             },
             error: function(err){
                 console.error("[Pimp] cannot refer the job", err);
+                $("[data-toggle=popover]").popover("hide");
+                $(".content", $el).html("<h2>Oh Oh, something happened</h2>");
+                $(".actions", $el).html("");
             }
         });
     });
