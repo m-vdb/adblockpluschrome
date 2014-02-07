@@ -74,16 +74,16 @@ body {
 }
 
 .pimpmy .content p.company {
-  background: url(img/ico-company.png) no-repeat;
+  background: url(integration/img/ico-company.png) no-repeat;
 }
 
 .pimpmy .content p.contract {
-  background: url(img/ico-contract.png) no-repeat;
+  background: url(integration/img/ico-contract.png) no-repeat;
 }
 
 .pimpmy .content p.location {
   margin-bottom: 14px;
-  background: url(img/ico-location.png) no-repeat;
+  background: url(integration/img/ico-location.png) no-repeat;
 }
 
 .pimpmy .actions {
@@ -218,9 +218,9 @@ body {
 
 .popup .content .disable {
   margin: 20px 0 0 0;
-  background: url(img/ico-disable.png) 0 4px no-repeat;
+  background: url(integration/img/ico-disable.png) 0 4px no-repeat;
 }
 
 .popup .content .settings {
-  background: url(img/ico-settings.png) 0 4px no-repeat;
+  background: url(integration/img/ico-settings.png) 0 4px no-repeat;
 }

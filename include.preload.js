@@ -34,17 +34,28 @@ var JOB_TEMPLATE = [
     '<p class="location">{{job_location}}</p>',
     '</div>',
     '<div class="actions">',
-    '<button data-action="apply" class="btn">Apply</a>',
-    '<button data-action="refer" class="recommend">Recommend</a>',
+    // apply
+    '<button data-action="apply" class="btn" data-container="body" data-toggle="popover"',
+    'data-placement="bottom" data-html="true"',
+    'data-content="Email <input type=\'text\' data-email/><br/>',
+    'LinkedIn profile <input type=\'text\' data-linkedin/><br/><button type=\'button\'',
+    'data-action=\'doApply\'>&gt;&gt;</button>" data-html="true">Apply</button>',
+    // refer
+    '<button data-action="refer" class="recommend" data-container="body" data-toggle="popover"',
+    'data-placement="bottom" data-html="true"',
+    'data-content="Your email <input type=\'text\' data-fromemail/><br/>',
+    'Friend email <input type=\'text\' data-friendemail/><br/><button type=\'button\'',
+    'data-action=\'doRefer\'>&gt;&gt;</button>" data-html="true">Recommend</button>',
+    '<span data-jobid="{{job_id}}"></span>',
     '</div>',
     '</div>',
     '</div>'
 ].join("");
-    // "<div><a href='{{job_url}}'>{{job_title}}</a><br/>"+
-    //     "<span>{{job_location}}</span><br/><span>{{job_description}}</span><span data-jobId='{{job_id}}'></span></div>"
 
 var DESC_LIMIT = 150;
 var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
+var JOB_APPLY_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/apply_job/";
+var JOB_REFER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/refer_job/";
 
 // Sets the currently used CSS rules for elemhide filters
 function setElemhideCSSRules(selectors)
@@ -166,7 +177,6 @@ function init()
   ext.backgroundPage.sendMessage({type: "get-selectors"}, setElemhideCSSRules);
 
   createUserIfNeeded();
-  console.log("inininininininniit");
 }
 
 // In Chrome 18 the document might not be initialized yet
@@ -247,6 +257,33 @@ function attachJobEvents($el){
         window.open(href, '_blank');
         e.preventDefault();
     });
+    // popover to apply
+    $("[data-action=apply]").popover();
+    $("[data-action=apply]").on("shown.bs.popover", function(){
+        // apply to the job
+        $("[data-action=doApply]").click(function(e){
+            var jobId = $('[data-jobid]', $el).data("jobid");
+            var data = {
+                email: $('[data-email]').val(),
+                linkedin: $('[data-linkedin]').val()
+            };
+            applyToJob(jobId, data);
+        });
+    });
+
+    // popover to refer
+    $("[data-action=refer]").popover();
+    $("[data-action=refer]").on("shown.bs.popover", function(){
+        // refer the job
+        $("[data-action=doRefer]").click(function(e){
+            var jobId = $('[data-jobid]', $el).data("jobid");
+            var data = {
+                from_email: $('[data-fromemail]').val(),
+                friend_email: $('[data-friendemail]').val()
+            };
+            referJob(jobId, data);
+        });
+    });
 }
 
 
@@ -290,5 +327,45 @@ function createUserIfNeeded(){
         };
 
         request.send()
+    });
+}
+
+function applyToJob(jobId, data){
+    console.log("[Pimp] apply: ", jobId, data);
+    getLSKey("userId", function(userId){
+        var request = new XMLHttpRequest();
+        request.open('POST', JOB_APPLY_URL + userId + '/' + jobId, true);
+
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400){
+                console.log("[Pimp] Job applied !");
+            } else {
+                console.error("[Pimp] cannot apply to the job", request);
+            }
+        };
+
+        request.onerror = function() {
+            // There was a connection error of some sort
+            console.error("[Pimp] cannot apply to the job.", request);
+        };
+
+        request.send(data);
+    });
+}
+
+function referJob(jobId, data){
+    console.log("[Pimp] refer: ", jobId, data);
+    getLSKey("userId", function(userId){
+        $.ajax({
+            url: JOB_REFER_URL + userId + '/' + jobId,
+            type: "POST",
+            data: data,
+            success: function(response){
+                console.log("[Pimp] Job refered !");
+            },
+            error: function(err){
+                console.error("[Pimp] cannot refer the job", err);
+            }
+        });
     });
 }

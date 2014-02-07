@@ -9,8 +9,8 @@
    },
    "content_scripts": [ {
       "all_frames": true,
-      "js": [ "ext/common.js", "ext/content.js", "include.preload.js", "jquery.js"],
-      "css": ["integration/style.css"],
+      "js": [ "ext/common.js", "ext/content.js", "include.preload.js", "jquery.js", "bootstrap.min.js"],
+      "css": ["integration/style.css", "bootstrap.min.css"],
       "matches": [ "http://*/*", "https://*/*"],
       "run_at": "document_start"
    }, {
