@@ -34,6 +34,7 @@ body
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   padding: 20px;
+  background: #e6e6e6;
 }
 
 td
@@ -137,16 +138,18 @@ border:0;
     color: #b0b0b0;
 }
 
-#tab-pimpmyad {
+#tab-pimpmyad, #tab-filterlists, #tab-whitelisted, #tab-userfilters, #tab-general {
   background-color: white;
   float: left;
   height: 100%;
   color: #ffffff;
-  border: 1px solid #ffffff;
+  border: 1px solid #b7b7b7;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
+  width: 800px;
+  color: #333;
 }
 
 .settings_sub_div {
@@ -154,10 +157,10 @@ border:0;
 }
 
 .settings_sub_div h3 {
-  font-size:1.7em;
+  font-size:24px;
   float: left;
-  font-weight:bold;
-  color: #555555
+  font-weight:400;
+  color: #434343
 }
 
 .option_line {
@@ -168,11 +171,12 @@ border:0;
 }
 
 .option_line h4 {
-  font-size: 1.4em;
-  width: 20%;
+  font-size: 18px;
+  width: 25%;
   float: left;
   margin: 0;
-  color: #999999;
+  font-weight: normal;
+  color: #434343;
 }
 
 .option_line p {
@@ -205,12 +209,32 @@ border:0;
 
 .settings_checkbox {
   float:left;
+  clear: left;
 }
 
 .settings_dropdown {
   width: 150px;
   float:left;
   display:block
+}
+
+#tabs {
+  background: none;
+}
+
+.ui-tabs .ui-tabs-nav  {
+  padding: 0;
+  background: none;
+}
+
+.ui-widget-header {
+  border: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  top: 2px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 #editKeyWords {
@@ -290,19 +314,31 @@ border:0;
   box-sizing: border-box;
   margin-top: -1px;
 }
+.logo {
+  width: 350px;
+  margin: 10px auto 30px auto;
+  text-align: center;
+}
+
+.logo img {
+  display: inline;
+  position: relative;
+  top: 4px;
+  margin: 0 10px 0 0;
+}
+.logo h1 {
+  display: inline;
+  margin: 0;
+}
+
 </style>
 </head>
 <body>
-<table>
-  <tr>
-    <td style="padding-right: 8px">
-      <img src="integration/img/icone32.png">
-    </td>
-    <td>
-      <h1><span class="i18n_options"></span></h1>
-    </td>
-  </tr>
-</table>
+
+  <div class="logo">
+    <img src="integration/img/icone32.png">
+    <h1>Pimp My App</h1>
+  </div>
 
 <div id="tabs">
   <ul>
@@ -321,7 +357,7 @@ border:0;
 
       <span class="option_line">
         <h4>
-          <span class="i18n_facebook"></span>
+          Facebook
         </h4>
         <input type="checkbox" class="settings_switch" id="facebook"/>
         <label for="facebook"><span class="ui"></span>Connect to Facebook</label>
@@ -329,7 +365,7 @@ border:0;
 
       <span class="option_line">
         <h4>
-          <span class="i18n_linkedin"></span>
+          LinkedIn
         </h4>
         <input type="checkbox" class="settings_switch" id="linkedin"/>
         <label for="linkedin"><span class="ui"></span>Connect to Linkedin</label>
@@ -337,7 +373,7 @@ border:0;
 
       <span class="option_line">
         <h4>
-          <span class="i18n_twitter"></span>
+          Twittter
         </h4>
         <input type="checkbox" class="settings_switch" id="twitter"/>
         <label for="twitter"><span class="ui"></span>Connect to Twitter</label>
@@ -348,12 +384,11 @@ border:0;
 
     <form class="settings_sub_div">
       <h3>
-        <span class="i18n_settings"></span>
+        Settings
       </h3>
-  
       <span class="option_line">
         <h4>
-          <span class="i18n_suggestions"></span>
+          Suggestions
         </h4>
         <input type="checkbox" class="settings_switch" id="history"/>
           <label for="history"><span class="ui"></span>Suggest jobs based on my history</label>
@@ -361,17 +396,17 @@ border:0;
 
       <span class="option_line">
         <h4>
-          <span class="i18n_your_dream_job">Your dream job</span>
+          Your dream job
         </h4>
         <textarea id= "editKeyWords">How would you describe your dream job</textarea>
       </span>
 
       <span class="option_line">
         <h4>
-          <span class="i18n_frequency">Frequency</span>
+          Frequency
         </h4>
 	<span>
-          <input type="radio" class="settings_checkbox"/>
+          <input type="radio" class="settings_checkbox" checked />
           <span>Automatically choose the number of jobs visible per page</span></br>
           <input type="radio" class="settings_checkbox"/>
           <span>Let me choose the number of jobs visible per page</span></br>
@@ -386,12 +421,12 @@ border:0;
 
     <form class="settings_sub_div">
       <h3>
-        <span class="i18n_locale">Locale</span>
+        Locale
       </h3>
 
       <span class="option_line">
         <h4>
-          <span class="i18n_language">Language</span>
+          Language
         </h4>
         <select name="language">
           <option value="English" class="settings_drop_down" selected>English</option>
@@ -401,7 +436,7 @@ border:0;
 
       <span class="option_line">
         <h4>
-          <span class="i18n_localization">Location</span>
+          Location
         </h4>
         <select name="location">
           <option value="San Francisco, United States" selected>San Francisco, United States</option>
