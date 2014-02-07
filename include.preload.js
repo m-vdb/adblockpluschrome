@@ -293,6 +293,11 @@ function attachJobEvents($el){
             referJob(jobId, data);
         });
     });
+
+    // 
+    $(".close", $el).on("click", function(){
+      $el.remove();
+    });
 }
 
 
