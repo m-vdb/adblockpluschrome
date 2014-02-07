@@ -37,15 +37,15 @@ var JOB_TEMPLATE = [
     // apply
     '<button data-action="apply" class="btn" data-container="body" data-toggle="popover"',
     'data-placement="bottom" data-html="true"',
-    'data-content="Email <input type=\'text\' data-email/><br/>',
+    'data-content="<span data-jobapplied=\'{{job_id}}\'>Email <input type=\'text\' data-email/><br/>',
     'LinkedIn profile <input type=\'text\' data-linkedin/><br/><button type=\'button\'',
-    'data-action=\'doApply\'>&gt;&gt;</button>" data-html="true">Apply</button>',
+    'data-action=\'doApply\'>&gt;&gt;</button></span>" data-html="true">Apply</button>',
     // refer
     '<button data-action="refer" class="recommend" data-container="body" data-toggle="popover"',
     'data-placement="bottom" data-html="true"',
-    'data-content="Your email <input type=\'text\' data-fromemail/><br/>',
+    'data-content="<span data-jobrefered=\'{{job_id}}\'>Your email <input type=\'text\' data-fromemail/><br/>',
     'Friend email <input type=\'text\' data-friendemail/><br/><button type=\'button\'',
-    'data-action=\'doRefer\'>&gt;&gt;</button>" data-html="true">Recommend</button>',
+    'data-action=\'doRefer\'>&gt;&gt;</button></span>" data-html="true">Recommend</button>',
     '<span data-jobid="{{job_id}}"></span>',
     '</div>',
     '</div>',
@@ -263,9 +263,10 @@ function attachJobEvents($el){
         // apply to the job
         $("[data-action=doApply]").click(function(e){
             var jobId = $('[data-jobid]', $el).data("jobid");
+            var $popIn = $('[data-jobapplied='+ jobId +']');
             var data = {
-                email: $('[data-email]').val(),
-                linkedin: $('[data-linkedin]').val()
+                email: $('[data-email]', $popIn).val(),
+                linkedin: $('[data-linkedin]', $popIn).val()
             };
             applyToJob(jobId, data);
         });
@@ -277,9 +278,10 @@ function attachJobEvents($el){
         // refer the job
         $("[data-action=doRefer]").click(function(e){
             var jobId = $('[data-jobid]', $el).data("jobid");
+            var $popIn = $('[data-jobrefered='+ jobId +']');
             var data = {
-                from_email: $('[data-fromemail]').val(),
-                friend_email: $('[data-friendemail]').val()
+                from_email: $('[data-fromemail]', $popIn).val(),
+                friend_email: $('[data-friendemail]', $popIn).val()
             };
             referJob(jobId, data);
         });
