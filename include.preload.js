@@ -20,10 +20,29 @@ var SELECTOR_GROUP_SIZE = 20;
 var elemhideElt = null;
 
 var JOB_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/get_user_job/";
-var JOB_TEMPLATE = (
-    "<div><a href='{{job_url}}'>{{job_title}}</a><br/>"+
-        "<span>{{job_location}}</span><br/><span>{{job_description}}</span><span data-jobId='{{job_id}}'></span></div>"
-);
+var JOB_TEMPLATE = [
+    '<div style="max-width: 500px">',
+    '<div class="pimpmy">',
+    '<div class="header">',
+    '<h3>Suggested Job</h3>',
+    '<p class="close">X</p>',
+    '</div>',
+    '<div class="content">',
+    '<h2><a href="{{job_url}}">{{job_title}}</a></h2>',
+    '<p class="company">{{job_company}}</p>',
+    '<p class="contract">{{job_contract}}</p>',
+    '<p class="location">{{job_location}}</p>',
+    '</div>',
+    '<div class="actions">',
+    '<button data-action="apply" class="btn">Apply</a>',
+    '<button data-action="refer" class="recommend">Recommend</a>',
+    '</div>',
+    '</div>',
+    '</div>'
+].join("");
+    // "<div><a href='{{job_url}}'>{{job_title}}</a><br/>"+
+    //     "<span>{{job_location}}</span><br/><span>{{job_description}}</span><span data-jobId='{{job_id}}'></span></div>"
+
 var DESC_LIMIT = 150;
 
 // Sets the currently used CSS rules for elemhide filters

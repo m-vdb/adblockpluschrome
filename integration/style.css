@@ -118,6 +118,8 @@ body {
 }
 
 .pimpmy .actions .recommend {
+  background: none;
+  border: none;
   position: relative;
   top: 2px;
   color: #0069a6;
@@ -133,6 +135,11 @@ body {
 
 .pimpmy .actions .recommend:hover {
   color: #44a1d7;
+  cursor: pointer;
+}
+
+.pimpmy .actions .recommend:focus {
+  outline: none;
 }
 
 .popup {
