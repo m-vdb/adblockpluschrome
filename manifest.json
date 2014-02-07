@@ -22,11 +22,11 @@
    "default_locale": "en_US",
    "description": "Pimp My Ad",
    "icons": {
-      "128": "icons/abp-128.png",
-      "16": "icons/abp-16.png",
+      "128": "integration/img/icone32.png",
+      "16": "integration/img/icone32.png",
       "19": "integration/img/ico-active.png",
-      "32": "icons/abp-32.png",
-      "48": "icons/abp-48.png"
+      "32": "integration/img/icone32.png",
+      "48": "integration/img/icone32.png"
    },
    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxGWIIBRUVzQIXITqE6+js1FA24fsZC58G0fxcO1Duwfps+9gip5tedTziErKEpeAQVkgasdT4kk+b6Lw27yp3oysAj6zD9j+j4W+EMArTXqMIc6SMYD7Z8bPcwPb3tC1MUxMSpO6oOVpFE23UhKe91SYnrK92nHI2cmsor5elXQIDAQAB",
    "manifest_version": 2,
