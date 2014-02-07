@@ -56,6 +56,8 @@ var DESC_LIMIT = 150;
 var CREATE_USER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/create_user";
 var JOB_APPLY_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/apply_job/";
 var JOB_REFER_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/refer_job/";
+var MAX_SIZE = 450;
+var MIN_SIZE = 150;
 
 // Sets the currently used CSS rules for elemhide filters
 function setElemhideCSSRules(selectors)
@@ -192,10 +194,12 @@ else
 function replaceElement(el, data){
     console.log("[Pimp] job:", data);
     var $el = $(el);
-    data = cleanJob(data);
-    $el.html(renderTemplate(data, JOB_TEMPLATE));
-    $el.attr("style", 'display: block !important');
-    attachJobEvents($el);
+    if ($el.parent() && $el.parent().width() > MIN_SIZE){
+        data = cleanJob(data);
+        $el.html(renderTemplate(data, JOB_TEMPLATE));
+        $el.attr("style", 'display: block !important; max-width: ' + MAX_SIZE + 'px;');
+        attachJobEvents($el);
+    }
 }
 
 
