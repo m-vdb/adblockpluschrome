@@ -36,5 +36,8 @@
    "permissions": [ "tabs", "http://*/*", "https://*/*", "contextMenus", "webRequest", "webRequestBlocking", "webNavigation", "unlimitedStorage", "notifications", "storage"],
    "update_url": "https://clients2.google.com/service/update2/crx",
    "version": "1.7.4",
-   "web_accessible_resources": [ "block.html" ]
+   "web_accessible_resources": [ "block.html",
+   "integration/img/ico-company.png",
+   "integration/img/ico-contract.png",
+   "integration/img/ico-location.png" ]
 }

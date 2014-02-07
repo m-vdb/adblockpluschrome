@@ -29,9 +29,22 @@ var JOB_TEMPLATE = [
     '</div>',
     '<div class="content">',
     '<h2><a href="{{job_url}}">{{job_title}}</a></h2>',
+
+    '<ul class="icons">',
+    '<li>',
+    '<img class="ico-company" src="">',
     '<p class="company">{{job_company}}</p>',
+    '</li>',
+    '<li>',
+    '<img class="ico-contract" src="">',
     '<p class="contract">{{job_contract}}</p>',
+    '</li>',
+    '<li>',
+    '<img class="ico-location" src="">',
     '<p class="location">{{job_location}}</p>',
+    '</li>',
+    '</ul>',
+
     '</div>',
     '<div class="actions">',
     // apply
@@ -198,6 +211,9 @@ function replaceElement(el, data){
         data = cleanJob(data);
         $el.html(renderTemplate(data, JOB_TEMPLATE));
         $el.attr("style", 'display: block !important; max-width: ' + MAX_SIZE + 'px;');
+        $(".ico-company").attr('src', chrome.extension.getURL('integration/img/ico-company.png'));
+        $(".ico-contract").attr('src', chrome.extension.getURL('integration/img/ico-contract.png'));
+        $(".ico-location").attr('src', chrome.extension.getURL('integration/img/ico-location.png'));
         attachJobEvents($el);
     }
 }

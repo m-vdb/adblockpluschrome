@@ -143,6 +143,19 @@ body {
   outline: none;
 }
 
+.icons li{
+    display: table; 
+    list-style-type: none;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.icons li img, p {
+  display:table-cell;
+  vertical-align: middle;  
+}
+
+
 .popup {
 
   width: 100%;
