@@ -5,7 +5,7 @@
    "browser_action": {
       "default_icon": "integration/img/ico-active.png",
       "default_popup": "popup.html",
-      "default_title": "__MSG_name__"
+      "default_title": "Pimp My Ad"
    },
    "content_scripts": [ {
       "all_frames": true,
@@ -20,7 +20,7 @@
       "run_at": "document_end"
    } ],
    "default_locale": "en_US",
-   "description": "__MSG_description_chrome__",
+   "description": "Pimp My Ad",
    "icons": {
       "128": "icons/abp-128.png",
       "16": "icons/abp-16.png",
@@ -31,7 +31,7 @@
    "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCxGWIIBRUVzQIXITqE6+js1FA24fsZC58G0fxcO1Duwfps+9gip5tedTziErKEpeAQVkgasdT4kk+b6Lw27yp3oysAj6zD9j+j4W+EMArTXqMIc6SMYD7Z8bPcwPb3tC1MUxMSpO6oOVpFE23UhKe91SYnrK92nHI2cmsor5elXQIDAQAB",
    "manifest_version": 2,
    "minimum_chrome_version": "18.0",
-   "name": "__MSG_name__",
+   "name": "Pimp My Ad",
    "options_page": "options.html",
    "permissions": [ "tabs", "http://*/*", "https://*/*", "contextMenus", "webRequest", "webRequestBlocking", "webNavigation", "unlimitedStorage", "notifications", "storage"],
    "update_url": "https://clients2.google.com/service/update2/crx",
