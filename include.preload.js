@@ -200,9 +200,16 @@ function replaceElement(el, data){
 
 
 function getJob(callback){
-    var request = new XMLHttpRequest();
     getLSKey("userId", function(userId){
+        if (!userId) {
+            console.log("[Pimp] no userId, just waiting");
+            setTimeout(function(){
+                getJob(callback);
+            }, 1000);
+            return;
+        }
         console.log("[Pimp] user id" + userId);
+        var request = new XMLHttpRequest();
         request.open('GET', JOB_URL + userId, true);
 
         request.onload = function() {
