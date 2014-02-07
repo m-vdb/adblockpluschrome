@@ -53,6 +53,14 @@ button
   white-space: pre;
 }
 
+#tabs {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.ui-widget-content {
+border:0;
+}
 #subscriptionTemplate,
 #addSubscriptionContainer,
 #customSubscriptionContainer
@@ -129,6 +137,159 @@ button
     color: #b0b0b0;
 }
 
+#tab-pimpmyad {
+  background-color: white;
+  float: left;
+  height: 100%;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.settings_sub_div {
+  padding: 5px;
+}
+
+.settings_sub_div h3 {
+  font-size:1.7em;
+  float: left;
+  font-weight:bold;
+  color: #555555
+}
+
+.option_line {
+  float: left;
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.option_line h4 {
+  font-size: 1.4em;
+  width: 20%;
+  float: left;
+  margin: 0;
+  color: #999999;
+}
+
+.option_line p {
+  float: left
+  font-size: 1.2em;
+  color: #999999;
+}
+
+.option_line label {
+  float: left
+  font-size: 1.2em;
+  color: #999999;
+}
+
+.option_line span {
+  float: left;
+  color:#999999;
+}
+
+.option_line select {
+  float: left;
+  padding-left:5%;
+  width:500px;
+}
+
+.settings_switch {
+  width: 150px;
+  float:left;
+}
+
+.settings_checkbox {
+  float:left;
+}
+
+.settings_dropdown {
+  width: 150px;
+  float:left;
+  display:block
+}
+
+#editKeyWords {
+  width: 60%;
+  background-color: #eeeeee;
+  float:left;
+  border: 0;
+  color: #999999;
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 75px;
+  cursor: pointer;
+}
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+}
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  left:0; top: -3px;
+  width: 65px; height: 30px;
+  background: #DDDDDD;
+  border-radius: 15px;
+  transition: background-color .2s;
+}
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  width: 20px; height: 20px;
+  transition: all .2s;
+  border-radius: 50%;
+  background: #7F8C9A;
+  top: 2px; left: 5px;
+}
+
+/* on checked */
+[type="checkbox"]:checked + label:before {
+  background:#2f7fcf; 
+}
+[type="checkbox"]:checked + label:after {
+  background: #ffffff;
+  top: 2px; left: 40px;
+}
+
+[type="checkbox"]:checked + label .ui,
+[type="checkbox"]:not(:checked) + label .ui:before,
+[type="checkbox"]:checked + label .ui:after {
+  position: absolute;
+  left: 6px;
+  width: 65px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+  transition: all .2s;
+}
+[type="checkbox"]:not(:checked) + label .ui:before {
+  content: "OFF";
+  left: 28px
+}
+[type="checkbox"]:checked + label .ui:after {
+  content: "ON";
+  color: #ffffff;
+}
+[type="checkbox"]:focus + label:before {
+  border: 1px dashed #777;
+  box-sizing: border-box;
+  margin-top: -1px;
+}
 </style>
 </head>
 <body>
@@ -153,49 +314,101 @@ button
   </ul>
 
   <div id="tab-pimpmyad">
-    <h3> 
-      <span class="i18n_accounts"></span>
-    </h3>
-      <table> 
-        <tr>
-          <td><p><span class="i18n_facebook"></p></td>
-          <td><input type="checkbox" id="facebook_connect"></td>
-        </tr>
-        <tr>
-          <td><p><span class="i18n_linkedin"></p></td>
-          <td><input type="checkbox" id="linkedin_connect"></td>
-        </tr>
-        <tr>
-          <td><p><span class="i18n_twitter"></p></td>
-          <td><input type="checkbox" id="twitter_connect"></td>
-        </tr>
-      </table>
-    <h3> 
-      <span class="i18n_settings"></span>
-    </h3>
-      <table> 
-        <tr>
-          <td><p><span class="i18n_suggestions"></p></td>
-          <td><textarea id= "editKeyWords"></textarea></td>
-        </tr>
-        <tr>
-          <td><p><span class="i18n_frequency"></p></td>
-          <td></td>
-        </tr>
-      </table>
-    <h3> 
-      <span class="i18n_locale"></span>
-    </h3>
-      <table> 
-        <tr>
-          <td><p><span class="i18n_language"></p></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><p><span class="i18n_localization"></p></td>
-          <td></td>
-        </tr>
-      </table>
+    <form class="settings_sub_div" action="#">
+      <h3>
+        <span class="i18n_accounts"></span>
+      </h3>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_facebook"></span>
+        </h4>
+        <input type="checkbox" class="settings_switch" id="facebook"/>
+        <label for="facebook"><span class="ui"></span>Connect to Facebook</label>
+      </span>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_linkedin"></span>
+        </h4>
+        <input type="checkbox" class="settings_switch" id="linkedin"/>
+        <label for="linkedin"><span class="ui"></span>Connect to Linkedin</label>
+      </span>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_twitter"></span>
+        </h4>
+        <input type="checkbox" class="settings_switch" id="twitter"/>
+        <label for="twitter"><span class="ui"></span>Connect to Twitter</label>
+      </span>
+
+    </form>
+
+
+    <form class="settings_sub_div">
+      <h3>
+        <span class="i18n_settings"></span>
+      </h3>
+  
+      <span class="option_line">
+        <h4>
+          <span class="i18n_suggestions"></span>
+        </h4>
+        <input type="checkbox" class="settings_switch" id="history"/>
+          <label for="history"><span class="ui"></span>Suggest jobs based on my history</label>
+      </span>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_your_dream_job">Your dream job</span>
+        </h4>
+        <textarea id= "editKeyWords">How would you describe your dream job</textarea>
+      </span>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_frequency">Frequency</span>
+        </h4>
+	<span>
+          <input type="radio" class="settings_checkbox"/>
+          <span>Automatically choose the number of jobs visible per page</span></br>
+          <input type="radio" class="settings_checkbox"/>
+          <span>Let me choose the number of jobs visible per page</span></br>
+          <select name="jobs_frequency">
+            <option value="Few" class="settings_drop_down" selected>Few</option>
+            <option value="Many" class="settings_drop_down">Many</option>
+          </select>
+        </span>
+      </span>
+    </form>
+
+
+    <form class="settings_sub_div">
+      <h3>
+        <span class="i18n_locale">Locale</span>
+      </h3>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_language">Language</span>
+        </h4>
+        <select name="language">
+          <option value="English" class="settings_drop_down" selected>English</option>
+          <option value="French" class="settings_drop_down">French</option>
+        </select>
+      </span>
+
+      <span class="option_line">
+        <h4>
+          <span class="i18n_localization">Location</span>
+        </h4>
+        <select name="location">
+          <option value="San Francisco, United States" selected>San Francisco, United States</option>
+          <option value="New York, United States">New York, United States</option>
+        </select>
+      </span>
+    </form>
   </div>
 
 
