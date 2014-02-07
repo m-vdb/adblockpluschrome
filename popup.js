@@ -41,22 +41,22 @@ function init()
 
   // Attach event listeners
   document.getElementById("enabled").addEventListener("click", toggleEnabled, false);
-  document.getElementById("clickhide").addEventListener("click", activateClickHide, false);
-  document.getElementById("clickhide-cancel").addEventListener("click", cancelClickHide, false);
+  // document.getElementById("clickhide").addEventListener("click", activateClickHide, false);
+  // document.getElementById("clickhide-cancel").addEventListener("click", cancelClickHide, false);
   document.getElementById("options").addEventListener("click", function()
   {
     openOptions();
   }, false);
 
   // Set up collapsing of menu items
-  var collapsers = document.getElementsByClassName("collapse");
-  for (var i = 0; i < collapsers.length; i++)
-  {
-    var collapser = collapsers[i];
-    collapser.addEventListener("click", toggleCollapse, false);
-    if (!Prefs[collapser.dataset.option])
-      document.getElementById(collapser.dataset.collapsable).classList.add("collapsed");
-  }
+  // var collapsers = document.getElementsByClassName("collapse");
+  // for (var i = 0; i < collapsers.length; i++)
+  // {
+  //   var collapser = collapsers[i];
+  //   collapser.addEventListener("click", toggleCollapse, false);
+  //   if (!Prefs[collapser.dataset.option])
+  //     document.getElementById(collapser.dataset.collapsable).classList.add("collapsed");
+  // }
 
   // Ask content script whether clickhide is active. If so, show cancel button.
   // If that isn't the case, ask background.html whether it has cached filters. If so,
@@ -67,8 +67,10 @@ function init()
     win.getActiveTab(function(t)
     {
       tab = t;
-      if (isWhitelisted(tab.url))
+      if (isWhitelisted(tab.url)){
         document.getElementById("enabled").classList.add("off");
+        document.getElementById("enabled").innerHTML = "Enable on this domain";
+      }
 
       tab.sendMessage({type: "get-clickhide-state"}, function(response)
       {
@@ -95,6 +97,7 @@ function toggleEnabled()
       filter.disabled = false;
       FilterStorage.addFilter(filter);
     }
+    this.innerHTML = "Enable on this domain"
   }
   else
   {
@@ -107,6 +110,7 @@ function toggleEnabled()
         filter.disabled = true;
       filter = isWhitelisted(tab.url);
     }
+    this.innerHTML = "Disable on this domain"
   }
 
   refreshIconAndContextMenu(tab);
