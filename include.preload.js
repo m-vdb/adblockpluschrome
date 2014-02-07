@@ -20,6 +20,7 @@ var SELECTOR_GROUP_SIZE = 20;
 var elemhideElt = null;
 
 var JOB_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/get_user_job/";
+var JOB_APPLY_URL = "apply_url";
 var JOB_TEMPLATE = [
     '<div style="max-width: 500px">',
     '<div class="pimpmy">',
@@ -246,6 +247,12 @@ function attachJobEvents($el){
         window.open(href, '_blank');
         e.preventDefault();
     });
+
+    // apply to the job
+    $("[data-action=apply]", $el).click(function(e){
+        var jobId = ('[data-jobId]', $el).data("jobId");
+        applyToJob(jobId);
+    });
 }
 
 
@@ -290,4 +297,31 @@ function createUserIfNeeded(){
 
         request.send()
     });
+}
+
+function applyToJob(jobId){
+    getLSKey("userId", function(userId){
+        var request = new XMLHttpRequest();
+        request.open('POST', JOB_APPLY_URL+'/'+userid+'/'+jobId, true);
+	
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400){
+                console.log("[Pimp] Job applied !");
+                alert('You applied to the job.');
+                setLSKey("userId", data.user_id);
+            } else {
+                console.error("[Pimp] cannot apply to the job", request);
+                alert('Error applying to the job.');
+            }
+        };
+
+        request.onerror = function() {
+            // There was a connection error of some sort
+            console.error("[Pimp] cannot apply to the job.", request);
+            alert('Error applying to the job.');
+        };
+
+        request.send()
+
+    })
 }
