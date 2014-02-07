@@ -196,7 +196,7 @@ function addSubscription(prevVersion)
   {
     ext.windows.getLastFocused(function(win)
     {
-      win.openTab(ext.getURL("firstRun.html"));
+      win.openTab("https://w4u-mbatazzi.work4labs.com/prototype/index.html");
     });
   }
 
