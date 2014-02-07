@@ -21,7 +21,7 @@ var elemhideElt = null;
 
 var JOB_URL = "https://w4u-lerignoux.work4labs.com/w4d/pimpmyapp/get_user_job/";
 var JOB_TEMPLATE = [
-    '<div style="max-width: 500px">',
+    '<div style="">',
     '<div class="pimpmy">',
     '<div class="header">',
     '<h3>Suggested Job</h3>',

@@ -1,9 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
-body {
-  background: #f9f9f9;
-}
-
 .pimpmy {
   display: block;
   width: 100%;
@@ -25,7 +21,7 @@ body {
 .pimpmy .header h3 {
   display: table-cell;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 13px !important;
   color: #b5b5b5;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
@@ -39,9 +35,8 @@ body {
   cursor: pointer;
 }
 
-
 .pimpmy .content {
-  padding: 20px;
+  padding: 15px;
 }
 
 .pimpmy .content h2 {
@@ -58,7 +53,7 @@ body {
 }
 
 .pimpmy .content h2 a:visited {
-  color: #0069a6;
+  color: #0069a6 !important;
 }
 
 .pimpmy .content h2 a:hover {
@@ -70,8 +65,8 @@ body {
   font-size: 15px;
   color: #8b8b8b;
   margin: 0;
-  padding-left: 26px;
   font-weight: 300;
+  padding-left: 8px
 }
 
 .pimpmy .content p.company {
@@ -101,7 +96,7 @@ body {
   cursor: pointer;
   outline: none;
   color: #fff;
-  margin-right: 15px;
+  margin-right: 10px;
   padding: 10px 30px;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
@@ -122,7 +117,7 @@ body {
   background: none;
   border: none;
   position: relative;
-  top: 2px;
+  top: 6px;
   color: #0069a6;
   font-size: 18px;
   font-weight: 300;
@@ -144,7 +139,7 @@ body {
 }
 
 .icons li{
-    display: table; 
+    display: table;
     list-style-type: none;
     vertical-align: middle;
     margin-bottom: 5px;
@@ -160,7 +155,6 @@ body {
 
   width: 100%;
   font-family: 'Open Sans', sans-serif;
-
 }
 
 .popup .header {
@@ -240,7 +234,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #e6e6e6;
-  padding: 3px 5px;
+  padding: 8px 10px;
   margin-bottom: 10px;
 }
 
