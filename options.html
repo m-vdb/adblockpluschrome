@@ -221,34 +221,34 @@ border:0;
   color: #999999;
 }
 
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+#tab-pimpmyad [type="checkbox"]:not(:checked),
+#tab-pimpmyad [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label,
+#tab-pimpmyad [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 75px;
   cursor: pointer;
 }
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before,
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label:before,
+#tab-pimpmyad [type="checkbox"]:checked + label:before,
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label:after,
+#tab-pimpmyad [type="checkbox"]:checked + label:after {
   content: '';
   position: absolute;
 }
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label:before,
+#tab-pimpmyad [type="checkbox"]:checked + label:before {
   left:0; top: -3px;
   width: 65px; height: 30px;
   background: #DDDDDD;
   border-radius: 15px;
   transition: background-color .2s;
 }
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label:after,
+#tab-pimpmyad [type="checkbox"]:checked + label:after {
   width: 20px; height: 20px;
   transition: all .2s;
   border-radius: 50%;
@@ -257,17 +257,17 @@ border:0;
 }
 
 /* on checked */
-[type="checkbox"]:checked + label:before {
+#tab-pimpmyad [type="checkbox"]:checked + label:before {
   background:#2f7fcf; 
 }
-[type="checkbox"]:checked + label:after {
+#tab-pimpmyad [type="checkbox"]:checked + label:after {
   background: #ffffff;
   top: 2px; left: 40px;
 }
 
-[type="checkbox"]:checked + label .ui,
-[type="checkbox"]:not(:checked) + label .ui:before,
-[type="checkbox"]:checked + label .ui:after {
+#tab-pimpmyad [type="checkbox"]:checked + label .ui,
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label .ui:before,
+#tab-pimpmyad [type="checkbox"]:checked + label .ui:after {
   position: absolute;
   left: 6px;
   width: 65px;
@@ -277,15 +277,15 @@ border:0;
   line-height: 22px;
   transition: all .2s;
 }
-[type="checkbox"]:not(:checked) + label .ui:before {
+#tab-pimpmyad [type="checkbox"]:not(:checked) + label .ui:before {
   content: "OFF";
   left: 28px
 }
-[type="checkbox"]:checked + label .ui:after {
+#tab-pimpmyad [type="checkbox"]:checked + label .ui:after {
   content: "ON";
   color: #ffffff;
 }
-[type="checkbox"]:focus + label:before {
+#tab-pimpmyad [type="checkbox"]:focus + label:before {
   border: 1px dashed #777;
   box-sizing: border-box;
   margin-top: -1px;
