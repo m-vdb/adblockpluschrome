@@ -99,7 +99,7 @@ function refreshIconAndContextMenu(tab)
   else
   {
     var excluded = isWhitelisted(tab.url);
-    iconFilename = excluded ? "icons/abp-19-whitelisted.png" : "icons/abp-19.png";
+    iconFilename = excluded ? "icons/abp-19-whitelisted.png" : "integration/img/ico-active.png";
   }
 
   tab.browserAction.setIcon(iconFilename);

@@ -3,7 +3,7 @@
       "scripts": [ "ext/common.js", "ext/background.js", "lib/compat.js", "lib/info.js", "lib/io.js", "lib/adblockplus.js", "lib/punycode.js", "lib/publicSuffixList.js", "lib/basedomain.js", "lib/sha1.js", "lib/jsbn.js", "lib/rsa.js", "webrequest.js", "popupBlocker.js", "iconAnimation.js", "background.js" ]
    },
    "browser_action": {
-      "default_icon": "icons/abp-19.png",
+      "default_icon": "integration/img/ico-active.png",
       "default_popup": "popup.html",
       "default_title": "__MSG_name__"
    },
@@ -24,7 +24,7 @@
    "icons": {
       "128": "icons/abp-128.png",
       "16": "icons/abp-16.png",
-      "19": "icons/abp-19.png",
+      "19": "integration/img/ico-active.png",
       "32": "icons/abp-32.png",
       "48": "icons/abp-48.png"
    },

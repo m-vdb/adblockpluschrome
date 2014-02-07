@@ -143,12 +143,10 @@ body {
 }
 
 .popup {
-  display: block;
+
   width: 100%;
   font-family: 'Open Sans', sans-serif;
-  background: #fff;
-  box-sizing: border-box;
-  box-shadow: 0 0 5px #888888;
+
 }
 
 .popup .header {
