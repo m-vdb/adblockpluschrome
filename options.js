@@ -63,6 +63,7 @@ function loadOptions()
   $("#importRawFilters").click(importRawFiltersText);
 
   // PIMP MY APP
+  
   $("#editKeyWords").blur(editKeyWords);
 
 
@@ -661,29 +662,25 @@ function setLinks(id)
   }
 }
 
-function getLSKey(key){
-    return window.localStorage.getItem("pimpMyApp__" + key);
-}
-
-function setLSKey(key, value){
-    window.localStorage.setItem("pimpMyApp__" + key, value);
-}
 
 function editKeyWords(){
-  var user_id = getLSKey("userId");
-  var keywords = $("#editKeyWords").val();
-  console.log(user_id);
 
-  $.ajax({
-    url : UPDATE_USER_URL + user_id, 
-    data : keywords,
-    success : function(data, textStatus, jqXHR){
-      console.log("User keywords updated" + textStatus);
-    },
-    error : function(jqXHR, textStatus, error){
-      console.log("User keywords not updated : " + textStatus);
-    }
-  });
+  var keywords = $("#editKeyWords").val();
+
+  ext.getStorageKey("userId",function(userId){
+    $.ajax({
+      url : UPDATE_USER_URL + userId, 
+      data : {keywords : keywords},
+      type : "POST",
+      success : function(data, textStatus, jqXHR){
+        console.log("User keywords updated");
+      },
+      error : function(jqXHR, textStatus, error){
+        console.log("User keywords not updated");
+      }
+    });
+  })
+
 }
 
 window.fbAsyncInit = function() {

@@ -166,6 +166,7 @@ function init()
   ext.backgroundPage.sendMessage({type: "get-selectors"}, setElemhideCSSRules);
 
   createUserIfNeeded();
+  console.log("inininininininniit");
 }
 
 // In Chrome 18 the document might not be initialized yet
