@@ -95,7 +95,7 @@ function refreshIconAndContextMenu(tab)
     // There is no grayscale version of the icon for whitelisted tabs
     // when using Safari, because icons are grayscale already and icons
     // aren't per tab in Safari.
-    iconFilename = "icons/abp-16.png"
+    iconFilename = "integration/img/icone32.png"
   else
   {
     var excluded = isWhitelisted(tab.url);
